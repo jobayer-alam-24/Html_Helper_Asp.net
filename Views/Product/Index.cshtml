@@ -1,1 +1,26 @@
+@model Product
+@using Microsoft.AspNetCore.Mvc.Rendering
 <h1 class="text-center bg-primary text-white p-2">Product Page</h1>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new {@class = "form-control"}))
+{
+    @* @Html.Label("Id", "ID: ") 
+    @Html.TextBox("Id","1", new {@readonly = "true"}) *@
+    @Html.LabelFor(model => model.Id, "ID")
+    @Html.TextBoxFor(model => model.Id, null, new {@class = "form-control"})
+    @Html.LabelFor(model => model.Name, "Name")
+    @Html.TextBoxFor(model => model.Name, null, new {@class = "form-control", @placeholder = "Enter Your Name..."})
+    @Html.LabelFor(model => model.SKU, "SKU")
+    @Html.TextBoxFor(model => model.SKU, null, new {@class = "form-control"})
+    @Html.LabelFor(model => model.Categroy, "Category: ")
+    @Html.TextBoxFor(model => model.Categroy, null, new {@class = "form-control"})
+    @Html.LabelFor(model => model.Price, "Price")
+    @Html.TextBoxFor(model => model.Price, null, new {@class = "form-control"})
+    @Html.LabelFor(model => model.InStock, "In Stock or Out Of Stock: ")
+    <br>
+    @Html.RadioButtonFor(model=> model.InStock, 1) <span>In Stock</span>
+    @Html.RadioButtonFor(model => model.InStock, 0) <span>Out Of Stock</span><br><br>
+    @Html.TextAreaFor(model => model.Description, 10, 50, new {@placeholder = "Write something here...", @class = "form-control", style = "resize: none"})
+ 
+  
+}
