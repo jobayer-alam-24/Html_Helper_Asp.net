@@ -12,8 +12,8 @@
     @Html.TextBoxFor(model => model.Name, null, new {@class = "form-control", @placeholder = "Enter Your Name..."})
     @Html.LabelFor(model => model.SKU, "SKU")
     @Html.TextBoxFor(model => model.SKU, null, new {@class = "form-control"})
-    @Html.LabelFor(model => model.Categroy, "Category: ")
-    @Html.TextBoxFor(model => model.Categroy, null, new {@class = "form-control"})
+    @Html.LabelFor(model => model.Category, "Category: ")
+    @Html.TextBoxFor(model => model.Category, null, new {@class = "form-control"})
     @Html.LabelFor(model => model.Price, "Price")
     @Html.TextBoxFor(model => model.Price, null, new {@class = "form-control"})
     @Html.LabelFor(model => model.InStock, "In Stock or Out Of Stock: ")
@@ -21,6 +21,24 @@
     @Html.RadioButtonFor(model=> model.InStock, 1) <span>In Stock</span>
     @Html.RadioButtonFor(model => model.InStock, 0) <span>Out Of Stock</span><br><br>
     @Html.TextAreaFor(model => model.Description, 10, 50, new {@placeholder = "Write something here...", @class = "form-control", style = "resize: none"})
- 
-  
+
+    @Html.DropDownList("Category", new List<SelectListItem>() {
+            new SelectListItem() {Text = "Electronics", Value = "1"},
+            new SelectListItem() {Text = "Clothing & Apparel", Value = "2"},
+            new SelectListItem() {Text = "Home & Kitchen", Value = "3"},
+            new SelectListItem() {Text = "Books & Stationery", Value = "4"},
+            new SelectListItem() {Text = "Health & Beauty", Value = "5"}
+        }, "-----Select A Product Category-----", new {@class = "form-control mt-2 mb-2"})
+
+    @Html.DropDownListFor(model=>model.Category, new List<SelectListItem> () 
+        {
+            new SelectListItem() {Text = "Electronics", Value = "1"},
+            new SelectListItem() {Text = "Clothing & Apparel", Value = "2"},
+            new SelectListItem() {Text = "Home & Kitchen", Value = "3", Selected = true},
+            new SelectListItem() {Text = "Books & Stationery", Value = "4"},
+            new SelectListItem() {Text = "Health & Beauty", Value = "5"}
+        }, null, new {@class = "form-control mb-2"})
+    
+    @Html.DropDownList("Category", ViewBag.Categories, "---Select A Category---", new {@class = "form-control mb-2"})
+    @Html.DropDownListFor(model => model.Category, (IEnumerable<SelectListItem>)ViewBag.Categories, null, new {@class = "form-control"})
 }
