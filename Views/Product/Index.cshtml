@@ -20,7 +20,13 @@
     <br>
     @Html.RadioButtonFor(model=> model.InStock, 1) <span>In Stock</span>
     @Html.RadioButtonFor(model => model.InStock, 0) <span>Out Of Stock</span><br><br>
-    @Html.TextAreaFor(model => model.Description, 10, 50, new {@placeholder = "Write something here...", @class = "form-control", style = "resize: none"})
+    @Html.TextAreaFor(model => model.Description, 10, 50, new {@placeholder = "Write something here...", @class = "form-control", style = "resize: none"});
+    @Html.RadioButton("Gender", "Male", false); <span>Male</span>
+    @Html.RadioButton("Gender", "Female", false); <span>Female</span>
+    @Html.RadioButton("Gender", "Others", true); <span>Others</span><br>
+    @Html.RadioButtonFor(model => model.Gender, "Male"); <span>Male</span>
+    @Html.RadioButtonFor(model => model.Gender, "Female"); <span>Female</span>
+    @Html.RadioButtonFor(model => model.Gender, "Others"); <span>Others</span>
 
     @Html.DropDownList("Category", new List<SelectListItem>() {
             new SelectListItem() {Text = "Electronics", Value = "1"},
@@ -40,5 +46,32 @@
         }, null, new {@class = "form-control mb-2"})
     
     @Html.DropDownList("Category", ViewBag.Categories, "---Select A Category---", new {@class = "form-control mb-2"})
-    @Html.DropDownListFor(model => model.Category, (IEnumerable<SelectListItem>)ViewBag.Categories, null, new {@class = "form-control"})
+    @Html.DropDownListFor(model => model.Category, (IEnumerable<SelectListItem>)ViewBag.Categories, null, new {@class = "form-control mb-2"})
+    @Html.DropDownList("Departments", new List<SelectListItem>(){
+        new SelectListItem {Text = "IT", Value = "IT"},
+        new SelectListItem {Text = "Electronics", Value = "Electronics"},
+        new SelectListItem {Text = "HR", Value = "HR"},
+        new SelectListItem {Text = "Mechanical", Value = "Mechanical", Selected = true}
+    }, null, new {@class = "form-control mb-2"});
+    @Html.DropDownList("Departments", new List<SelectListItem>(){
+        new SelectListItem {Text = "IT", Value = "it"},
+        new SelectListItem {Text = "Electronics", Value = "electronics"},
+        new SelectListItem {Text = "HR", Value = "Hr"}
+    }, "---Select Your Department---", new {@class = "form-control mb-2"})
+    @Html.DropDownListFor(model => model.Category, new List<SelectListItem>(){
+        new SelectListItem {Text = "AC", Value = "ac"},
+        new SelectListItem {Text = "NON-AC", Value = "non-ac", Selected = true},
+        new SelectListItem {Text = "Chair Coach", Value = "chair-coach"}
+    }, null, new {@class = "form-control mb-2"});
+    @Html.DropDownListFor(model => model.Category, new List<SelectListItem>(){
+        new SelectListItem {Text = "AC", Value = "ac", Selected = true},
+        new SelectListItem {Text = "NON-AC", Value = "non-ac"},
+        new SelectListItem {Text = "Chair Coach", Value = "chair coach"}
+    }, "---Select Your Seat Type---", new {@class = "form-control mb-2"})
+
+  
+    
+    
+
+    
 }

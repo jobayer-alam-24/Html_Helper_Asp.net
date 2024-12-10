@@ -13,6 +13,8 @@ namespace Html_Helper_Asp.net.Models
         public string Category { get; set; }
         public decimal Price  {get; set; }
         public bool InStock { get; set; }
+        public string Gender { get; set; }
+        public bool Hobby { get; set; }
         public string Description { get; set; }
     }
 }
