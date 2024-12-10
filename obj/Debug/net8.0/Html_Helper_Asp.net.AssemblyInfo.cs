@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Html_Helper_Asp.net")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ed30ccc6f66b38fd16d4115367b9303fcda8954")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+826b68f154071ffbdf4025de4f16853f73c9fa7e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Html_Helper_Asp.net")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Html_Helper_Asp.net")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

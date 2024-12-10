@@ -16,5 +16,6 @@ namespace Html_Helper_Asp.net.Models
         public string Gender { get; set; }
         public bool Hobby { get; set; }
         public string Description { get; set; }
+        public List<string> Countries { get; set; } = new List<string>();
     }
 }

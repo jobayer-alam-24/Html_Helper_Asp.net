@@ -69,9 +69,34 @@
         new SelectListItem {Text = "Chair Coach", Value = "chair coach"}
     }, "---Select Your Seat Type---", new {@class = "form-control mb-2"})
 
-  
-    
-    
+    @Html.CheckBox("Hobby", true, new {@class = "form-check-input me-2", id = "gardening"})
+    @Html.Label("Hobby", "Gardening", new {@class = "form-check-label me-2", @for = "gardening"})
+    @Html.CheckBox("Hobby", true, new {@class = "form-check-input me-2", id = "hiking"})
+    @Html.Label("Hobby", "Hiking", new {@class = "form-check-label me-2", @for = "hiking"})
+    @Html.CheckBox("Hobby", false, new {@class = "form-check-input me-2", id = "reading"})
+    @Html.Label("Hobby", "Reading", new {@class = "form-check-label me-2", @for = "reading"})
+    @Html.CheckBoxFor(model => model.Hobby, new {@class = "form-check-input me-2", id = "singing"})
+    @Html.LabelFor(model => model.Hobby, "Singing", new {@class = "form-check-label me-2", @for = "singing"});
+    @Html.CheckBoxFor(model => model.Hobby, new {@class = "form-check-input me-2", id = "writing"})
+    @Html.LabelFor(model => model.Hobby, "Writing", new {@class = "form-check-label me-2", @for = "writing"})
+    @Html.CheckBoxFor(model => model.Hobby, new {@class = "form-check-input me-2", id = "scripting"})
+    @Html.LabelFor(model => model.Hobby, "Scripting", new {@class = "form-check-label mb-2", @for = "scripting"})
 
-    
+    @Html.ListBox("Countries", new List<SelectListItem>(){        
+
+        new SelectListItem {Text = "-----Select Countries Where You are a Citizen-----", Value = ""},
+        new SelectListItem {Text = "Bangladesh", Value = "BD"},
+        new SelectListItem {Text = "India", Value = "IN"},
+        new SelectListItem {Text = "Pakistan", Value = "PK"},
+        new SelectListItem {Text = "Saudi Arabia", Value = "SA"},
+        new SelectListItem {Text = "Siriya", Value = "Siriya"}
+    }, new {@class = "form-control"})
+    @Html.ListBoxFor(model => model.Countries, new List<SelectListItem>(){
+        new SelectListItem {Text = "-----Select Countries Where You are a Citizen-----", Value = ""},
+        new SelectListItem {Text = "Bangladesh", Value = "BD"},
+        new SelectListItem {Text = "India", Value = "IN"},
+        new SelectListItem {Text = "Pakistan", Value = "PK"},
+        new SelectListItem {Text = "Saudi Arabia", Value = "SA"},
+        new SelectListItem {Text = "Siriya", Value = "Siriya"} 
+    }, new {@class = "form-control mt-2"})
 }
